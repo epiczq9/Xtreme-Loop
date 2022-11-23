@@ -4430,9 +4430,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloatingText
       objectReference: {fileID: 0}
-    - target: {fileID: 8630775586202550142, guid: ebe417601de6f6b45a37091b529bc427, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4261412863
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebe417601de6f6b45a37091b529bc427, type: 3}
