@@ -8,19 +8,19 @@ using Cinemachine;
 public class GameController : MonoBehaviour
 {
     public GameObject runnerPrefab;
-    public GameObject skaterPrefab;
+    public GameObject rollerSkaterPrefab;
 
     public PathCreator runnerPath;
-    public PathCreator skaterPath;
+    public PathCreator rollerSkaterPath;
 
     public List<GameObject> runnersList;
-    public List<GameObject> skatersList;
+    public List<GameObject> rollerSkatersList;
 
     public GameObject newRunnerButton;
-    public GameObject newSkaterButton;
+    public GameObject newRollerSkaterButton;
     public GameObject newObstacleButton;
 
-    public GameObject skaterCourse;
+    public GameObject rollerSkaterCourse;
 
     int currentlyActiveObstacles = 1;
     public GameObject[] obstacles;
@@ -28,26 +28,26 @@ public class GameController : MonoBehaviour
     public Transform spawnLocation;
 
     public Text runnerPriceText;
-    public Text skaterPriceText;
+    public Text rollerSkaterPriceText;
     public Text obstaclePriceText;
 
     float baseSpeed;
     public int money = 0;
     public float runnerPrice = 100;
-    public int skaterPrice = 1000;
+    public int rollerSkaterPrice = 1000;
     public int obstaclePrice = 500;
 
     public bool timeSpedUp = false;
 
     public bool runFaster = false;
     public bool spedUp = false;
-    float tapTimerMax = 3f;
+    readonly float tapTimerMax = 3f;
     float tapTimerCurrent = 0f;
 
     public Text moneyText;
 
     public CinemachineVirtualCamera runnerPathCam;
-    public CinemachineVirtualCamera skaterPathCam;
+    public CinemachineVirtualCamera rollerSkaterPathCam;
 
     void Start() {
         UpdateMoneyText();
@@ -91,10 +91,10 @@ public class GameController : MonoBehaviour
             newRunnerButton.GetComponent<Button>().interactable = false;
         }
 
-        if (runnersList.Count > 3 && skatersList.Count < 8 && money >= skaterPrice) {
-            newSkaterButton.GetComponent<Button>().interactable = true;
+        if (runnersList.Count > 3 && rollerSkatersList.Count < 8 && money >= rollerSkaterPrice) {
+            newRollerSkaterButton.GetComponent<Button>().interactable = true;
         } else {
-            newSkaterButton.GetComponent<Button>().interactable = false;
+            newRollerSkaterButton.GetComponent<Button>().interactable = false;
         }
 
         if(money >= obstaclePrice && currentlyActiveObstacles < obstacles.Length) {
@@ -133,10 +133,10 @@ public class GameController : MonoBehaviour
     }
 
     public void MergeRunners() {
-        if(runnerPathCam.Priority > skaterPathCam.Priority) {
+        if(runnerPathCam.Priority > rollerSkaterPathCam.Priority) {
             runnerPathCam.Priority = 10;
-            skaterPathCam.Priority = 20;
-            skaterCourse.SetActive(true);
+            rollerSkaterPathCam.Priority = 20;
+            rollerSkaterCourse.SetActive(true);
             if (!obstacles[4].activeInHierarchy) {
                 obstacles[4].SetActive(true);
             }
@@ -146,29 +146,29 @@ public class GameController : MonoBehaviour
             Destroy(runnersList[runnersList.Count - 1]);
             runnersList.RemoveAt(runnersList.Count - 1);
         }
-        GameObject newSkater = Instantiate(skaterPrefab, spawnLocation);
-        newSkater.GetComponent<PathCreation.Examples.PathFollower>().pathCreator = skaterPath;
-        if (skatersList.Count == 0) {
-            newSkater.GetComponent<PathCreation.Examples.PathFollower>().distanceTravelled = 0;
+        GameObject newRollerSkater = Instantiate(rollerSkaterPrefab, spawnLocation);
+        newRollerSkater.GetComponent<PathCreation.Examples.PathFollower>().pathCreator = rollerSkaterPath;
+        if (rollerSkatersList.Count == 0) {
+            newRollerSkater.GetComponent<PathCreation.Examples.PathFollower>().distanceTravelled = 0;
         } else {
-            newSkater.GetComponent<PathCreation.Examples.PathFollower>().distanceTravelled
-            = skatersList[0].GetComponent<PathCreation.Examples.PathFollower>().distanceTravelled - NextSkaterPosition();
+            newRollerSkater.GetComponent<PathCreation.Examples.PathFollower>().distanceTravelled
+            = rollerSkatersList[0].GetComponent<PathCreation.Examples.PathFollower>().distanceTravelled - NextSkaterPosition();
         }
-        skatersList.Add(newSkater);
-        money -= skaterPrice;
-        skaterPrice = (int)(skaterPrice * 1.15f);
+        rollerSkatersList.Add(newRollerSkater);
+        money -= rollerSkaterPrice;
+        rollerSkaterPrice = (int)(rollerSkaterPrice * 1.15f);
         UpdateMoneyText();
     }
 
     public float NextSkaterPosition() {
-        return skatersList.Count switch {
-            1 => skaterPath.path.length / 2,
-            2 => skaterPath.path.length / 4,
-            3 => skaterPath.path.length * 3 / 4,
-            4 => skaterPath.path.length / 8,
-            5 => skaterPath.path.length * 5 / 8,
-            6 => skaterPath.path.length * 3 / 8,
-            7 => skaterPath.path.length * 7 / 8,
+        return rollerSkatersList.Count switch {
+            1 => rollerSkaterPath.path.length / 2,
+            2 => rollerSkaterPath.path.length / 4,
+            3 => rollerSkaterPath.path.length * 3 / 4,
+            4 => rollerSkaterPath.path.length / 8,
+            5 => rollerSkaterPath.path.length * 5 / 8,
+            6 => rollerSkaterPath.path.length * 3 / 8,
+            7 => rollerSkaterPath.path.length * 7 / 8,
             _ => 0,
         };
     }
@@ -176,7 +176,7 @@ public class GameController : MonoBehaviour
     public void UpdateMoneyText() {
         moneyText.text = money.ToString();
         runnerPriceText.text = runnerPrice.ToString();
-        skaterPriceText.text = skaterPrice.ToString();
+        rollerSkaterPriceText.text = rollerSkaterPrice.ToString();
         obstaclePriceText.text = obstaclePrice.ToString();
     }
 
@@ -185,7 +185,7 @@ public class GameController : MonoBehaviour
             runner.GetComponent<PathCreation.Examples.PathFollower>().speed = baseSpeed * 2f;
             runner.GetComponentInChildren<Animator>().Play("FastRun");
         }
-        foreach (GameObject skater in skatersList) {
+        foreach (GameObject skater in rollerSkatersList) {
             skater.GetComponent<PathCreation.Examples.PathFollower>().speed = baseSpeed * 2f;
         }
     }
@@ -194,7 +194,7 @@ public class GameController : MonoBehaviour
             runner.GetComponent<PathCreation.Examples.PathFollower>().speed = baseSpeed;
             runner.GetComponentInChildren<Animator>().Play("Run");
         }
-        foreach (GameObject skater in skatersList) {
+        foreach (GameObject skater in rollerSkatersList) {
             skater.GetComponent<PathCreation.Examples.PathFollower>().speed = baseSpeed;
         }
         spedUp = false;
