@@ -5,13 +5,14 @@ using UnityEngine;
 public class JumpTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other) {
-        switch (other.gameObject.tag) {
+        other.gameObject.GetComponent<RunnerBehaviour>().Jump();
+        /*switch (other.gameObject.tag) {
             case "Runner":
                 other.gameObject.GetComponent<RunnerBehaviour>().Jump();
                 break;
 
             case "Skater":
                 break;
-        }
+        }*/
     }
 }

@@ -7,6 +7,7 @@ public class Obstacle : MonoBehaviour
 {
     public GameController gameCon;
     public GameObject points;
+    public GameObject uiSpawn;
 
     int runnerReward = 50;
     int rollerSkaterReward = 100;
@@ -18,7 +19,7 @@ public class Obstacle : MonoBehaviour
                 Debug.Log("Runner Passed");
                 break;
 
-            case "Skater":
+            case "Rollerskater":
                 gameCon.GetComponent<GameController>().money += rollerSkaterReward;
                 ShowPoints(rollerSkaterReward);
                 Debug.Log("Skater Passed");
@@ -29,7 +30,7 @@ public class Obstacle : MonoBehaviour
     }
 
     void ShowPoints(int amount) {
-        GameObject rewardText = Instantiate(points, transform);
+        GameObject rewardText = uiSpawn.GetComponent<UISpawn>().SpawnPointUI(points);
         rewardText.GetComponent<TMP_Text>().text = "+ " + amount.ToString();
     }
 }

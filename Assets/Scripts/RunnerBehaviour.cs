@@ -11,12 +11,6 @@ public class RunnerBehaviour : MonoBehaviour
     }
     public void Jump() {
         GetComponentInChildren<Animator>().StopPlayback();
-        if (gameController.GetComponent<GameController>().runFaster) {
-            GetComponentInChildren<Animator>().Play("FastJump");
-            Debug.Log("Faster Jump Baby");
-        } else {
-            GetComponentInChildren<Animator>().Play("Jump");
-            Debug.Log("Slow Jump");
-        }
+        GetComponentInChildren<Animator>().SetTrigger("Jump");
     }
 }
