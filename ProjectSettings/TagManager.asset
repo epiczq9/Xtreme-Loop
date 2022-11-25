@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Runner
   - Rollerskater
+  - Skateboarder
   layers:
   - Default
   - TransparentFX

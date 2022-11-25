@@ -5,7 +5,11 @@ using UnityEngine;
 public class JumpTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other) {
-        other.gameObject.GetComponent<RunnerBehaviour>().Jump();
+        if (other.gameObject.CompareTag("Skateboarder")) {
+            other.gameObject.GetComponent<SkaterBehaviour>().Jump();
+        } else {
+            other.gameObject.GetComponent<RunnerBehaviour>().Jump();
+        }
         /*switch (other.gameObject.tag) {
             case "Runner":
                 other.gameObject.GetComponent<RunnerBehaviour>().Jump();

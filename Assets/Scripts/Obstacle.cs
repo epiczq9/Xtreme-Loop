@@ -11,6 +11,7 @@ public class Obstacle : MonoBehaviour
 
     int runnerReward = 50;
     int rollerSkaterReward = 100;
+    int skateboarderReward = 200;
     private void OnTriggerEnter(Collider other) {
         switch (other.gameObject.tag) {
             case "Runner":
@@ -22,6 +23,11 @@ public class Obstacle : MonoBehaviour
             case "Rollerskater":
                 gameCon.GetComponent<GameController>().money += rollerSkaterReward;
                 ShowPoints(rollerSkaterReward);
+                Debug.Log("Skater Passed");
+                break;
+            case "Skateboarder":
+                gameCon.GetComponent<GameController>().money += skateboarderReward;
+                ShowPoints(skateboarderReward);
                 Debug.Log("Skater Passed");
                 break;
         }

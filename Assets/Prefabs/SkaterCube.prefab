@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 2772312341686582772}
   - component: {fileID: -4772722030086312987}
   m_Layer: 0
-  m_Name: Skater
+  m_Name: SkaterCube
   m_TagString: Skater
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
