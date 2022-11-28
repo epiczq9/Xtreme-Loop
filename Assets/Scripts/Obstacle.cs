@@ -23,7 +23,7 @@ public class Obstacle : MonoBehaviour
             case "Rollerskater":
                 gameCon.GetComponent<GameController>().money += rollerSkaterReward;
                 ShowPoints(rollerSkaterReward);
-                Debug.Log("Skater Passed");
+                Debug.Log("Rollerskater Passed");
                 break;
             case "Skateboarder":
                 gameCon.GetComponent<GameController>().money += skateboarderReward;
