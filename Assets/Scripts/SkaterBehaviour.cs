@@ -2,14 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Timers;
 
 public class SkaterBehaviour : MonoBehaviour
 {
     public GameObject gameController;
     public GameObject skater;
     public GameObject board;
+    public GameObject trail;
     private void Start() {
         gameController = GameObject.Find("GameController");
+        TimersManager.SetTimer(this, 0.2f, ActivateTrail);
+    }
+
+    void ActivateTrail() {
+        trail.SetActive(true);
     }
     public void Jump() {
         //skater.GetComponent<Animator>().StopPlayback();
