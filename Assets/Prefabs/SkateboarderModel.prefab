@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409298344303962865}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.5}
-  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
+  m_LocalPosition: {x: 0.39008, y: 0.031146, z: -3.5762}
+  m_LocalScale: {x: 2.08097, y: 2.08097, z: 2.08097}
   m_Children:
   - {fileID: 1442396654814301497}
   - {fileID: 1409298344912586697}
@@ -173,11 +173,11 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: f183a1fd2a4527f4faac16a918dd38c3, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: cd9e57fa08b982e4fbef5a8e01cf4f92, type: 2}
+      objectReference: {fileID: 2100000, guid: cfe9f71249dc68347b73799066a5ae19, type: 2}
     - target: {fileID: -7511558181221131132, guid: f183a1fd2a4527f4faac16a918dd38c3, type: 3}
       propertyPath: m_Materials.Array.data[5]
       value: 
-      objectReference: {fileID: 2100000, guid: c42a166f0f235b6419d194b71e1cf65b, type: 2}
+      objectReference: {fileID: 2100000, guid: 56fbe531bb0fd4e4c9bf61cf225ab5a9, type: 2}
     - target: {fileID: 919132149155446097, guid: f183a1fd2a4527f4faac16a918dd38c3, type: 3}
       propertyPath: m_Name
       value: SkateboardJumpAnim
@@ -267,27 +267,27 @@ PrefabInstance:
     - target: {fileID: -8295428966876692746, guid: 6c5cab2d2a429704496d16400d8d0c38, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c42a166f0f235b6419d194b71e1cf65b, type: 2}
+      objectReference: {fileID: 2100000, guid: 56fbe531bb0fd4e4c9bf61cf225ab5a9, type: 2}
     - target: {fileID: -8295428966876692746, guid: 6c5cab2d2a429704496d16400d8d0c38, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: cd9e57fa08b982e4fbef5a8e01cf4f92, type: 2}
+      objectReference: {fileID: 2100000, guid: 56fbe531bb0fd4e4c9bf61cf225ab5a9, type: 2}
     - target: {fileID: -8295428966876692746, guid: 6c5cab2d2a429704496d16400d8d0c38, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 526c6b65ae8280a41b9eac40b02bf2af, type: 2}
+      objectReference: {fileID: 2100000, guid: e27f19b14362128428434ad611ea8b15, type: 2}
     - target: {fileID: -8295428966876692746, guid: 6c5cab2d2a429704496d16400d8d0c38, type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: cd9e57fa08b982e4fbef5a8e01cf4f92, type: 2}
+      objectReference: {fileID: 2100000, guid: 56fbe531bb0fd4e4c9bf61cf225ab5a9, type: 2}
     - target: {fileID: -8295428966876692746, guid: 6c5cab2d2a429704496d16400d8d0c38, type: 3}
       propertyPath: m_Materials.Array.data[4]
       value: 
-      objectReference: {fileID: 2100000, guid: cd9e57fa08b982e4fbef5a8e01cf4f92, type: 2}
+      objectReference: {fileID: 2100000, guid: 56fbe531bb0fd4e4c9bf61cf225ab5a9, type: 2}
     - target: {fileID: -8295428966876692746, guid: 6c5cab2d2a429704496d16400d8d0c38, type: 3}
       propertyPath: m_Materials.Array.data[5]
       value: 
-      objectReference: {fileID: 2100000, guid: c42a166f0f235b6419d194b71e1cf65b, type: 2}
+      objectReference: {fileID: 2100000, guid: 56fbe531bb0fd4e4c9bf61cf225ab5a9, type: 2}
     - target: {fileID: 919132149155446097, guid: 6c5cab2d2a429704496d16400d8d0c38, type: 3}
       propertyPath: m_Name
       value: SkaterJumpAnim
