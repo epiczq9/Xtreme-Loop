@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 2575518292338357577}
   - component: {fileID: 2575518292338357576}
   m_Layer: 0
-  m_Name: Obstacle
+  m_Name: ObstacleRunner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameCon: {fileID: 0}
   points: {fileID: 8630775586202550140, guid: ebe417601de6f6b45a37091b529bc427, type: 3}
+  uiSpawn: {fileID: 0}
 --- !u!54 &2575518292338357576
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -211,7 +212,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 01061b5c5fc757f468b3e056bcae9209, type: 2}
+  - {fileID: 2100000, guid: c77544756b0757443bb6a03fbaf15a85, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
