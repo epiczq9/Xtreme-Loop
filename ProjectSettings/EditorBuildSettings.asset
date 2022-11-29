@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/NikolaScena.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/QuickSetupScene.unity
+    guid: d7730a4752929a34cb9bcf61ac0e7b81
+  - enabled: 1
+    path: Assets/Scenes/Creative Other Button.unity
+    guid: 7ec524d79db7ab2459cdddbbcf3b3dab
   m_configObjects: {}
