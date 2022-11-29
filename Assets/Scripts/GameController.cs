@@ -189,7 +189,7 @@ public class GameController : MonoBehaviour
     }
 
     public void MergeRunners() {
-        if(runnersList.Count >= 3) {
+        if(runnersList.Count >= 3 && rollerSkatersList.Count < 8) {
             SpawnNewRollerskater();
         } else {
             SpawnNewSkateboarder();
