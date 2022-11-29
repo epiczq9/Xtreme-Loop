@@ -26,6 +26,7 @@ public class SkaterBehaviour : MonoBehaviour
     }
 
     void MoveUp() {
+        Debug.Log("Jump HIGHER");
         Sequence jumpSeq = DOTween.Sequence();
         jumpSeq.Append(transform.DOMoveY(0, 0.5f)).Append(transform.DOMoveY(1.5f, 0.5f)).Append(transform.DOMoveY(0, 0.4f));
     }

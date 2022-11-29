@@ -4377,7 +4377,7 @@ MonoBehaviour:
   mergePriceText: {fileID: 1992356064}
   obstaclePriceText: {fileID: 1032256329}
   addPathPriceText: {fileID: 117970832}
-  money: 1000000
+  money: 0
   runnerPrice: 100
   mergePrice: 1000
   obstaclePrice: 500
